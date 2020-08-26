@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso JavaScript</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      var nomes = ['Diego', 'Gabriel', 'Lucas'];
+
+      // Seleciona a div
+      var divNames = document.querySelector('#app');
+
+      // Criar ul
+      var ul = document.createElement('ul');
+
+      //Fazer n li's conforme tamanho do vetor nomes
+      for (var i = 0; i < nomes.length; i++) {
+        var currentName = nomes[i];
+
+        // cria li's
+        var li = document.createElement('li');
+
+        // adiciona nome como texto no elemento li
+        li.textContent = currentName;
+
+        // adiciona ao elemento mãe
+        ul.appendChild(li);
+      }
+
+      // Adiciona ul a div
+      divNames.appendChild(ul);
+    </script>
+  </body>
+</html>

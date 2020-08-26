@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso JavaScript</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" id="nome" />
+      <button id="adicionar">Adicionar</button>
+      <div id="nomes"></div>
+    </div>
+
+    <script>
+      // Variáveis globais
+      var nomes = ['Diego', 'Gabriel', 'Lucas'];
+
+      var inputElement = document.querySelector('#nome');
+      var btnElement = document.querySelector('#adicionar');
+      var containerElement = document.querySelector('#nomes');
+
+      var ul = document.createElement('ul');
+
+      btnElement.onclick = function () {
+        novoNome = inputElement.value;
+        nomes.push(novoNome);
+
+        var li = document.createElement('li');
+        li.textContent = novoNome;
+        ul.appendChild(li);
+        containerElement.appendChild(ul);
+
+        limpaInput();
+      };
+
+      nomes.forEach((nome) => {
+        var li = document.createElement('li');
+        li.textContent = nome;
+        ul.appendChild(li);
+      });
+      containerElement.appendChild(ul);
+
+      function limpaInput() {
+        inputElement.value = '';
+        inputElement.focus();
+      }
+    </script>
+  </body>
+</html>
